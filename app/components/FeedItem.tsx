@@ -32,7 +32,7 @@ export default function FeedItem({image}: FeedItemProps) {
 	return (
 		<>
 			<div
-				className="max-w-[600px] w-full rounded bg-white cursor-pointer hover:shadow-md transition-all duration-100 hover:translate-y-[-2px] border border-grayLightest"
+				className="max-w-[600px] w-full rounded-lg bg-white cursor-pointer hover:shadow-md transition-all duration-100 hover:translate-y-[-2px] border border-grayLightest"
 				onClick={handleClick}
 			>
 				<div className="p-4 flex items-center gap-4">
@@ -84,7 +84,7 @@ export default function FeedItem({image}: FeedItemProps) {
 						onClick={() => setIsOpen(false)}
 						className="absolute top-4 right-4 text-white text-2xl"
 					>
-						<XIcon className="w-6 h-6 text-white" />
+						<XIcon className="w-6 h-6 text-white cursor-pointer" />
 					</button>
 				</div>
 			)}
