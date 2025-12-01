@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {ImageHit} from "../types/imageApiResponse";
 import {useEffect, useState} from "react";
-import {XIcon, Loader2} from "lucide-react";
+import {XIcon, Loader2, EyeIcon, HeartIcon} from "lucide-react";
 
 interface FeedItemProps {
 	image: ImageHit;
@@ -31,23 +31,37 @@ export default function FeedItem({image}: FeedItemProps) {
 
 	return (
 		<>
-			<div className="max-w-[600px] w-full border border-grayLightest rounded p-4 bg-white">
-				<div>
+			<div
+				className="max-w-[600px] w-full rounded bg-white cursor-pointer hover:shadow-md transition-all duration-100 hover:translate-y-[-2px] border border-grayLightest"
+				onClick={handleClick}
+			>
+				<div className="p-4 flex items-center gap-4">
+					<Image
+						src={image.userImageURL}
+						alt={image.user}
+						width={32}
+						height={32}
+						className="rounded-full"
+					/>
 					<p className="text-lg font-bold">{image.user}</p>
-					<p>1st December 2025</p>
 				</div>
 				<Image
 					src={image.webformatURL}
 					alt={image.tags}
 					width={image.webformatWidth}
 					height={image.webformatHeight}
-					className="w-full rounded border border-grayLightest cursor-pointer"
-					objectFit="cover"
-					onClick={handleClick}
+					className="w-full"
+					objectFit="contain"
 				/>
-				<div className="flex items-end justify-end gap-2">
-					<p>{image.views} views</p>
-					<p>{image.likes} likes</p>
+				<div className="flex items-end justify-end gap-8 text-sm text-grayLight p-4">
+					<p className="flex items-center gap-2">
+						<EyeIcon className="w-4 h-4" />
+						{image.views}
+					</p>
+					<p className="flex items-center gap-2">
+						<HeartIcon className="w-4 h-4" />
+						{image.likes}
+					</p>
 				</div>
 			</div>
 

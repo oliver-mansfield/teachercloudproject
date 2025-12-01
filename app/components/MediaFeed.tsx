@@ -20,7 +20,7 @@ export default function MediaFeed() {
 	}
 
 	return (
-		<div className="flex justify-center items-center flex-col w-full p-4 gap-4">
+		<div className="flex justify-center items-center flex-col w-full p-4 gap-8">
 			{data?.hits.map((image: ImageHit) => (
 				<FeedItem key={image.id} image={image} />
 			))}
