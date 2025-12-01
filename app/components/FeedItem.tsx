@@ -66,7 +66,7 @@ export default function FeedItem({image}: FeedItemProps) {
 			</div>
 
 			{isOpen && (
-				<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+				<div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-60">
 					{isModalImageLoading && (
 						<div className="absolute inset-0 flex justify-center items-center">
 							<Loader2 className="w-12 h-12 text-white animate-spin" />
@@ -82,9 +82,9 @@ export default function FeedItem({image}: FeedItemProps) {
 					/>
 					<button
 						onClick={() => setIsOpen(false)}
-						className="absolute top-4 right-4 text-white text-2xl"
+						className="absolute top-4 right-4 text-white text-2xl border border-uiPrimary rounded-full p-2 bg-white"
 					>
-						<XIcon className="w-6 h-6 text-white cursor-pointer" />
+						<XIcon className="w-6 h-6 text-uiPrimary cursor-pointer " />
 					</button>
 				</div>
 			)}

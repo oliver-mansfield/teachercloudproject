@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
 import {QueryProvider} from "./QueryProvider";
-import Sidebar from "./components/Sidebar";
+import Menu from "./components/Menu";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -23,8 +23,8 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${inter.variable} antialiased`}>
 				<QueryProvider>
-					<div className="flex">
-						<Sidebar />
+					<div className="sm:flex">
+						<Menu />
 						<main className="flex-1 bg-panel1">{children}</main>
 					</div>
 				</QueryProvider>
