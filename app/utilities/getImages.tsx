@@ -1,7 +1,9 @@
 import {ImageApiResponse} from "../types/imageApiResponse";
 
 export default async function getImages(): Promise<ImageApiResponse | null> {
-	const url = `https://pixabay.com/api/?key=${process.env.NEXT_PUBLIC_PIXABAY_API_KEY}&q=flowers&image_type=photo&pretty=true`;
+	// const url = `https://pixabay.com/api/?key=${process.env.NEXT_PUBLIC_PIXABAY_API_KEY}&q=flowers&image_type=photo&pretty=true`;
+	const url =
+		"https://pixabay.com/api/?key=53488091-2cda2553e8b8491e3fa2e0826&q=flowers&image_type=photo&pretty=true";
 
 	try {
 		const response = await fetch(url);

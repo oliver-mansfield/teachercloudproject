@@ -84,7 +84,7 @@ export default function FeedItem({image}: FeedItemProps) {
 						onClick={() => setIsOpen(false)}
 						className="absolute top-4 right-4 text-white text-2xl border border-uiPrimary rounded-full p-2 bg-white"
 					>
-						<XIcon className="w-6 h-6 text-uiPrimary cursor-pointer " />
+						<XIcon className="w-6 h-6 text-uiPrimary cursor-pointer" />
 					</button>
 				</div>
 			)}
