@@ -47,13 +47,19 @@ export default function FeedItem({image}: FeedItemProps) {
 				aria-label={`Open image posted by ${image.user}`}
 			>
 				<div className="p-4 flex items-center gap-4">
-					<Image
-						src={image.userImageURL}
-						alt={image.user}
-						width={32}
-						height={32}
-						className="rounded-full"
-					/>
+					{image.userImageURL ? (
+						<Image
+							src={image.userImageURL}
+							alt={image.user}
+							width={32}
+							height={32}
+							className="rounded-full"
+						/>
+					) : (
+						<div className="w-8 h-8 rounded-full bg-grayLightest flex items-center justify-center text-xs font-semibold text-grayMid">
+							?
+						</div>
+					)}
 					<p className="text-lg font-bold">{image.user}</p>
 				</div>
 				<Image

@@ -4,9 +4,11 @@ const perPage = 10;
 export {perPage};
 
 export default async function getImages(
-	page: number = 1
+	page: number = 1,
+	searchTerm: string = "flowers"
 ): Promise<ImageApiResponse> {
-	const url = `https://pixabay.com/api/?key=53488091-2cda2553e8b8491e3fa2e0826&q=flowers&image_type=photo&pretty=true&page=${page}&per_page=${perPage}`;
+	const trimmedSearchTerm = searchTerm.trim() || "flowers";
+	const url = `https://pixabay.com/api/?key=53488091-2cda2553e8b8491e3fa2e0826&q=${trimmedSearchTerm}&image_type=photo&pretty=true&page=${page}&per_page=${perPage}`;
 
 	const response = await fetch(url);
 	if (!response.ok) {
