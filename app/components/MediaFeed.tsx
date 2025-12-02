@@ -115,8 +115,8 @@ export default function MediaFeed() {
 				</>
 			) : (
 				<>
-					{images.map((image: ImageHit) => (
-						<FeedItem key={image.id} image={image} />
+					{images.map((image: ImageHit, index: number) => (
+						<FeedItem key={`${image.id}-${index}`} image={image} />
 					))}
 					{/* Observer element for infinite scroll */}
 					<div ref={loadMoreRef} />
