@@ -26,7 +26,9 @@ export default function Menu() {
 			<button
 				onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 				className="md:hidden fixed top-4 right-4 z-50 p-2 bg-white rounded-full border border-uiPrimary"
-				aria-label="Toggle menu"
+				aria-label={
+					isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
+				}
 			>
 				{isMobileMenuOpen ? (
 					<XIcon className="w-6 h-6 text-uiPrimary" />

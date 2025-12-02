@@ -60,12 +60,14 @@ export default function MediaFeed() {
 	// Flatten all pages into a single array
 	const images: ImageHit[] = data?.pages.flatMap((page) => page.hits) ?? [];
 
-	if (error) {
-		return <div>Failed to load images. {error.message}</div>;
-	}
-
 	return (
-		<div className="flex justify-center items-center flex-col w-full p-4 gap-8">
+		<section className="flex justify-center items-center flex-col w-full p-4 gap-8">
+			{error && (
+				<div className="text-red-600">
+					Failed to load images. {error.message}
+				</div>
+			)}
+
 			{isLoading ? (
 				<>
 					<FeedItemSkeleton />
@@ -80,16 +82,16 @@ export default function MediaFeed() {
 					{/* Observer element for infinite scroll */}
 					<div ref={loadMoreRef} />
 					{isFetchingNextPage && (
-						<>
+						<div className="flex flex-col items-center gap-4">
 							<FeedItemSkeleton />
 							<FeedItemSkeleton />
-						</>
+						</div>
 					)}
 					{!hasNextPage && images.length > 0 && (
 						<div className="text-grayLight py-4">No more images to load</div>
 					)}
 				</>
 			)}
-		</div>
+		</section>
 	);
 }
