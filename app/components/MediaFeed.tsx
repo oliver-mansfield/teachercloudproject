@@ -6,6 +6,7 @@ import {ImageHit} from "@/app/types/imageApiResponse";
 import FeedItem from "./FeedItem";
 import FeedItemSkeleton from "./FeedItemSkeleton";
 import {useEffect, useRef, useState} from "react";
+import {SearchIcon} from "lucide-react";
 
 export default function MediaFeed() {
 	const [searchTerm, setSearchTerm] = useState("flowers"); // active term used in query
@@ -94,9 +95,10 @@ export default function MediaFeed() {
 				</div>
 				<button
 					type="submit"
-					className="mt-2 sm:mt-6 rounded-md bg-uiPrimary px-4 py-2  text-white hover:bg-uiPrimaryDark transition-colors h-12"
+					className="mt-2 sm:mt-6 button-primary flex items-center gap-2"
 					aria-label="Search button"
 				>
+					<SearchIcon className="w-4 h-4" />
 					Search
 				</button>
 			</form>
