@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
-import {QueryProvider} from "./utilities/QueryProvider";
+import {AppProvider} from "./utilities/providers/AppProvider";
 import Menu from "./components/Menu";
 
 const inter = Inter({
@@ -20,15 +20,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${inter.variable} antialiased`}>
-				<QueryProvider>
+		<AppProvider>
+			<html lang="en">
+				<body className={`${inter.variable} antialiased`}>
 					<div className="sm:flex">
 						<Menu />
 						<main className="flex-1 bg-panel1">{children}</main>
 					</div>
-				</QueryProvider>
-			</body>
-		</html>
+				</body>
+			</html>
+		</AppProvider>
 	);
 }

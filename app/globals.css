@@ -11,9 +11,13 @@
 	--font-sans: var(--font-geist-sans);
 	--font-mono: var(--font-geist-mono);
 
-	/* Custom colors - matching camelCase usage in components */
 	--color-panel1: #f8f8f8;
 	--color-panel2: #e9e9e9;
+
+	/* Accessibility mode - pale pink panel colors */
+	--color-panel1-accessibility: red;
+	--color-panel2-accessibility: blue;
+
 	--color-brand: #ffb68f;
 	--color-brandLight: #ffe9dd;
 	--color-brandLighter: #fff4ee;
@@ -44,4 +48,19 @@ body {
 
 .button-primary {
 	@apply rounded-md bg-uiPrimary px-4 py-2  text-white hover:bg-uiPrimaryDark transition-colors h-12 cursor-pointer;
+}
+
+/* Accessibility mode styles - override panel colors */
+html.accessibility-mode {
+	--color-panel1: var(--color-panel1-accessibility);
+	--color-panel2: var(--color-panel2-accessibility);
+}
+
+/* Directly override Tailwind classes for accessibility mode */
+html.accessibility-mode .bg-panel1 {
+	background-color: var(--color-panel1-accessibility) !important;
+}
+
+html.accessibility-mode .bg-panel2 {
+	background-color: var(--color-panel2-accessibility) !important;
 }

@@ -8,6 +8,7 @@ export default async function getImages(
 	searchTerm: string = "flowers"
 ): Promise<ImageApiResponse> {
 	const trimmedSearchTerm = searchTerm.trim() || "flowers";
+
 	const url = `https://pixabay.com/api/?key=53488091-2cda2553e8b8491e3fa2e0826&q=${trimmedSearchTerm}&image_type=photo&pretty=true&page=${page}&per_page=${perPage}`;
 
 	const response = await fetch(url);
@@ -17,6 +18,6 @@ export default async function getImages(
 		);
 	}
 
-	const data = (await response.json()) as ImageApiResponse;
+	const data = await response.json();
 	return data;
 }

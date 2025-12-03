@@ -3,8 +3,8 @@
 import getImages, {perPage} from "@/app/utilities/api/getImagesBySearchTerm";
 import {useInfiniteQuery} from "@tanstack/react-query";
 import {ImageHit} from "@/app/types/imageApiResponse";
-import FeedItem from "./MediaFeed/FeedItem";
-import FeedItemSkeleton from "./MediaFeed/FeedItemSkeleton";
+import FeedItem from "./FeedItem";
+import FeedItemSkeleton from "./FeedItemSkeleton";
 import {useEffect, useRef, useState} from "react";
 import {SearchIcon} from "lucide-react";
 
@@ -77,7 +77,7 @@ export default function MediaFeed() {
 			>
 				<div className="flex-1">
 					<label
-						className="font-medium mb-2 block"
+						className="mb-2 block"
 						htmlFor="feed-search"
 						aria-label="Search images"
 					>
@@ -104,9 +104,7 @@ export default function MediaFeed() {
 			</form>
 
 			{error && (
-				<div className="text-red-600">
-					Failed to load images. {error.message}
-				</div>
+				<p className="text-red-600">Failed to load images. {error.message}</p>
 			)}
 
 			{isLoading ? (
@@ -124,6 +122,7 @@ export default function MediaFeed() {
 					<div ref={loadMoreRef} />
 					{isFetchingNextPage && (
 						<div className="flex flex-col items-center gap-4">
+							<FeedItemSkeleton />
 							<FeedItemSkeleton />
 							<FeedItemSkeleton />
 						</div>

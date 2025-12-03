@@ -1,4 +1,4 @@
-import MediaFeed from "@/app/components/MediaFeed";
+import MediaFeed from "@/app/components/MediaFeed/MediaFeed";
 
 export default function Home() {
 	return (

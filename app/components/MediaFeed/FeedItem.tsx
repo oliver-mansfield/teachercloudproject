@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {ImageHit} from "../types/imageApiResponse";
+import {ImageHit} from "../../types/imageApiResponse";
 import {useEffect, useState} from "react";
 import {XIcon, Loader2, EyeIcon, HeartIcon} from "lucide-react";
 

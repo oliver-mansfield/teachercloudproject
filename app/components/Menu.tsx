@@ -51,12 +51,14 @@ export default function Menu() {
 						: "-translate-x-full md:translate-x-0"
 				}`}
 			>
-				<Image
-					src="/evidence_logo.svg"
-					alt="Evidence for Learning"
-					width={70}
-					height={70}
-				/>
+				<div className="flex items-center justify-center">
+					<Image
+						src="/evidence_logo.svg"
+						alt="Evidence for Learning"
+						width={70}
+						height={70}
+					/>
+				</div>
 
 				<nav className="mt-8 flex flex-col gap-4">
 					<Navigation navigationItems={navigationItems} />
