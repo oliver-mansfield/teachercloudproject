@@ -89,7 +89,7 @@ export default function MediaFeed() {
 						value={inputValue}
 						onChange={(event) => setInputValue(event.target.value)}
 						placeholder="Try 'cats', 'mountains', 'sunset'"
-						className="w-full rounded-md border border-grayLightest px-3 py-2  focus:outline-none focus:ring-2 focus:ring-uiPrimary focus:border-uiPrimary bg-white h-12 shadow"
+						className="w-full rounded-md border border-grayLightest px-3 py-2  focus:outline-none focus:ring-2 focus:ring-uiPrimary focus:border-uiPrimary bg-Panelwhite h-12 shadow bg-white"
 						aria-label="Search input"
 					/>
 				</div>

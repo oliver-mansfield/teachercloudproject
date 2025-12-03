@@ -25,7 +25,7 @@ export default function Menu() {
 		<>
 			<button
 				onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-				className="md:hidden fixed top-4 right-4 z-50 p-2 bg-white rounded-full border border-uiPrimary"
+				className="md:hidden fixed top-4 right-4 z-50 p-2 bg-Panelwhite rounded-full border border-uiPrimary"
 				aria-label={
 					isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
 				}
@@ -45,7 +45,7 @@ export default function Menu() {
 			)}
 
 			<aside
-				className={`fixed md:static inset-y-0 left-0 w-64 p-4 border-r border-grayLightest bg-white z-40 transform transition-transform duration-300 ease-in-out ${
+				className={`fixed md:static inset-y-0 left-0 w-64 p-4 border-r border-grayLightest bg-Panelwhite z-40 transform transition-transform duration-300 ease-in-out bg-panelWhite ${
 					isMobileMenuOpen
 						? "translate-x-0"
 						: "-translate-x-full md:translate-x-0"

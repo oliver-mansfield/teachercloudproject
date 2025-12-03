@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import "./globals.css";
 import {AppProvider} from "./utilities/providers/AppProvider";
-import Menu from "./components/Menu";
+import {LayoutContent} from "./components/LayoutContent";
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -21,14 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<AppProvider>
-			<html lang="en">
-				<body className={`${inter.variable} antialiased`}>
-					<div className="sm:flex">
-						<Menu />
-						<main className="flex-1 bg-panel1">{children}</main>
-					</div>
-				</body>
-			</html>
+			<LayoutContent interVariable={inter.variable}>{children}</LayoutContent>
 		</AppProvider>
 	);
 }

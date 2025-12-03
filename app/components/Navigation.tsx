@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import {AccessibilityIcon} from "lucide-react";
+import {SailboatIcon} from "lucide-react";
 import {useAccessibilityMode} from "@/app/utilities/providers/AccessibilityModeProvider";
 
 interface NavigationItem {
@@ -35,13 +35,13 @@ export default function Navigation({
 			))}
 			<button
 				onClick={toggleAccessibilityMode}
-				className={`flex items-center gap-2 rounded-lg p-4 hover:bg-brandLighter transition-all duration-100 ${
+				className={`flex items-center gap-2 rounded-lg p-4 mt-16 hover:bg-brandLighter transition-all duration-100 ${
 					isAccessibilityMode ? "bg-brandLight" : null
 				}`}
 				aria-label="Toggle accessibility mode"
 				aria-pressed={isAccessibilityMode}
 			>
-				<AccessibilityIcon className="w-4 h-4" />
+				<SailboatIcon className="w-4 h-4" />
 				<span>Accessibility Mode</span>
 			</button>
 		</nav>
